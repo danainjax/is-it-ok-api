@@ -6,9 +6,9 @@ class Imdb
         @movies = JSON.parse(response)
         # byebug
          @movies["items"].each do |movie|
-            Movie.create( title: movie["title"], image: movie["image"])
+            Movie.create( title: movie["title"], director: movie["directors"], full_title: movie["fullTitle"], genres: movie["genres"], plot: movie["plot"], runtime: movie["runtimeStr"], stars: movie["stars"], year: movie["year"], releaseDate: movie["releaseState"], contentRating: movie["contentRating"], image: movie["image"] )
          end
-         
+        
     end
         
 
