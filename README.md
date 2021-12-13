@@ -2,4 +2,4 @@
 
 #movie safe api
 
-Rails backend for is-it-ok movie reviews for parents and their kids.
+Rails backend for movie safe reviews for parents and their kids.
