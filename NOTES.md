@@ -1,1 +1,1 @@
-Updated git branch to new naming movie-safe-api
+[1] Add serializer ( rails g serializer Movie)
