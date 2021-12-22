@@ -5,9 +5,14 @@ class MoviesController < ApplicationController
         render json: movies
     end
 
-    def popular 
-        Imdb.most_popular()
-        movies = Movie.all
-        render json: movies
+    def show
+        movie =  Movie.find(params[:id])
+        render json: movie
     end
+
+    # def popular 
+    #     Imdb.most_popular()
+    #     movies = Movie.all
+    #     render json: movies
+    # end
 end
