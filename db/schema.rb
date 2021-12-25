@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_165211) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "password_digest"
     t.string "email"
     t.string "city"
     t.string "state"
