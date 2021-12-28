@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user
+    # before_action :set_user
 
 
     def index
@@ -8,23 +8,25 @@ class UsersController < ApplicationController
     end
 
     def create
-        print user_params
-        print "hello"
+        puts user_params
         user = User.create(user_params)
         if user.save
-        render json: user
+            render_user_with_token(user)
         else
-            render "error"
+            render json: {errors: user.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end
            
     end
 
     def show
-        @user
-        render json: @user
+        
+        user = User.new(user_params)
+        if user.save
+            render_user_with_token(user)
+        else
+            render json: {errors: user.errors.full_messages.to_sentence}, status: :unprocessable_entity
+        end
     end
-
-    
 
     private
 
@@ -32,8 +34,8 @@ class UsersController < ApplicationController
         params.permit(:name, :email, :city, :state, :id, :password)
     end
 
-    def set_user
-        @user = User.find_by_id(params[:id])
-    end
+    # def set_user
+    #     user = User.find_by_id(params[:id])
+    # end
 
 end
