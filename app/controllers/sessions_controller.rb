@@ -3,12 +3,14 @@ class SessionsController < ApplicationController
     def create
         user = User.find_by_name(params[:name])
         if user && user.authenticate(params[:password])
-            render_user_with_token(user)
+            render json: {user: UserSerializer.new(user), token: encode_token(user.id)}
         else
-            render json: {errors: "It aint gon work sonny, your password/username is rotten"}, status: :forbidden
+            render json: {errors: "Username or password is invalid"}, status: :forbidden
         end
+    end
 
         def autologin
-            render_user_with_token(logged_in_user)
+            # byebug
+            render json: {user: UserSerializer.new(logged_in_user), token: encode_token(logged_in_user.id)}
         end
 end
