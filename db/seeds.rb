@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # User.create(name: "Dana Pughakoff", email: "danainjax@gmail.com", city: "Ponte Vedra", state: "FL")
-User.create(name: "Georges St. Jean Jacques", email: 'geo@georges.com', city: 'Limoges')
+User.create(name: "danainjax", email: "danainjax@gmail.com", password: "dana", city: "Jacksonville", state: "Florida")
+Imdb.playing_now
