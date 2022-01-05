@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_12_165211) do
+ActiveRecord::Schema.define(version: 2022_01_05_225032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,20 @@ ActiveRecord::Schema.define(version: 2021_12_12_165211) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.integer "rating"
+    t.string "language"
+    t.string "sex"
+    t.string "violence"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
@@ -43,4 +57,6 @@ ActiveRecord::Schema.define(version: 2021_12_12_165211) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "reviews", "movies"
+  add_foreign_key "reviews", "users"
 end
