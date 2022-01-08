@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # before_action :set_user
+    
 
 
     def index
@@ -8,8 +8,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        puts user_params
-        user = User.create(user_params)
+        user = User.create!(user_params)
         if user.save
             render_user_with_token(user)
         else
@@ -34,8 +33,6 @@ class UsersController < ApplicationController
         params.permit(:name, :email, :city, :state, :id, :password)
     end
 
-    # def set_user
-    #     user = User.find_by_id(params[:id])
-    # end
+    
 
 end

@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
     def create
-        review = logged_in_user.reviews.create(review_params)
+        review = logged_in_user.reviews.create!(review_params)
         render json: review
     end
 
