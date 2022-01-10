@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :trailers
   resources :users
   # , only:[:create, :index, :get]
   resources :movies, only: [:index, :show] do

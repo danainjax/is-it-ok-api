@@ -29,7 +29,8 @@ class Imdb
             url = "https://imdb-api.com/en/API/Trailer/"
             response = RestClient.get(url + ENV["IMDB_API_KEY"] + "/" + id)
             trailer = JSON.parse(response)
-            print trailer
+            Trailer.create( tt_id: trailer["imDbId"], title: trailer["title"], video_title: trailer["videoTitle"], video_description: trailer["videoDescription"], link_embed: trailer["linkEmbed"])
+
         end
         
 end
