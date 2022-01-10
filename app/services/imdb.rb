@@ -20,7 +20,17 @@ class Imdb
             end
         end
 
-        
+        # def self.movie_show(id)
+        #     url = ""
+
+        # end
+
+        def self.trailer(id)
+            url = "https://imdb-api.com/en/API/Trailer/"
+            response = RestClient.get(url + ENV["IMDB_API_KEY"] + "/" + id)
+            trailer = JSON.parse(response)
+            print trailer
+        end
         
 end
         
