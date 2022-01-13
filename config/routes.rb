@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :trailers
   resources :users
+  # resouces :reviews, only: [:index]
   # , only:[:create, :index, :get]
   resources :movies, only: [:index, :show] do
     resources :reviews, only:[:create]

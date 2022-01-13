@@ -5,6 +5,11 @@ class ReviewsController < ApplicationController
         render json: review
     end
 
+    # def index
+    #     reviews = Review.all
+    #     render json: reviews
+    # end
+
 
 
 private
