@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :trailers
   resources :users
+  resources :reviews
   # resouces :reviews, only: [:index]
   # , only:[:create, :index, :get]
   resources :movies, only: [:index, :show] do
-    resources :reviews, only:[:create]
+    resources :reviews
   end
   resources :sessions, only: [:create]
   get "/me", to: 'sessions#autologin'
