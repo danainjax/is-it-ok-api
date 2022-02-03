@@ -7,9 +7,15 @@ class TrailersController < ApplicationController
     end
 
     def show
-        trailer = Trailer.find(params[:id])
+        trailer = Trailer.find(params[:tt_id])
         render json: trailer
     end
+
+    def index
+        trailers = Trailer.all
+        render json: trailers
+    end
+
 
 
 
