@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :trailers
   resources :users
-  resources :reviews
+  resources :reviews, param: :tt_id
   # resouces :reviews, only: [:index]
   # , only:[:create, :index, :get]
   resources :movies, only: [:index, :show] do

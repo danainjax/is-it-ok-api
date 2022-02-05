@@ -7,7 +7,7 @@ class TrailersController < ApplicationController
     end
 
     def show
-        trailer = Trailer.find(params[:tt_id])
+        trailer = Trailer.find_by(tt_id: params[:id])
         render json: trailer
     end
 
@@ -21,6 +21,6 @@ class TrailersController < ApplicationController
 
     private
     def trailer_params
-        params.permit(:id)
+        params.permit(:id, :tt_id)
     end
 end
