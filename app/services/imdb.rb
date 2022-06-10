@@ -20,16 +20,23 @@ class Imdb
             end
         end
 
-        # def self.movie_show(id)
-        #     url = ""
-
-        # end
-
         def self.trailer(id)
             url = "https://imdb-api.com/en/API/Trailer/"
             response = RestClient.get(url + ENV["IMDB_API_KEY"] + "/" + id)
             trailer = JSON.parse(response)
             Trailer.create( tt_id: trailer["imDbId"], title: trailer["title"], video_title: trailer["videoTitle"], video_description: trailer["videoDescription"], link_embed: trailer["linkEmbed"])
+
+        end
+
+        def self.movie_details(id)
+            # pass in id as tt_id as a string, example: "tt2382320"
+            url = "https://imdb-api.com/en/API/Title/"
+            response = RestClient.get(url + ENV["IMDB_API_KEY"] + "/" + id)
+            movie = JSON.parse(response)
+            # write the code here to take the movie and create a movie details object that belongs to the particular movie
+            # Need a Movie Details controller/resource/model/serializer
+            print movie
+            
 
         end
         
