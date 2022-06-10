@@ -4,7 +4,7 @@ class Trailer < ApplicationRecord
     def self.get_trailers
         movies = Movie.all
         trailers = movies.map{|movie| movie.tt_id}
-        trailer.each do |id|
+        trailers.each do |id|
             Imdb.trailer(id)
         end
     end

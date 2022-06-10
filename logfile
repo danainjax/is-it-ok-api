@@ -1,0 +1,7 @@
+2022-06-10 10:46:28.849 EDT [8325] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-10 10:46:28.852 EDT [8325] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-10 10:46:28.852 EDT [8325] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-10 10:46:28.852 EDT [8325] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-10 10:46:28.856 EDT [8326] LOG:  database system was shut down at 2022-06-10 10:45:53 EDT
+2022-06-10 10:46:28.858 EDT [8325] LOG:  database system is ready to accept connections
+2022-06-10 10:46:48.725 EDT [8398] FATAL:  database "is_it_ok_api_development" does not exist
