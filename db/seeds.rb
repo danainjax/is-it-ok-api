@@ -11,3 +11,4 @@ User.create(name: "danainjax", email: "danainjax@gmail.com", password: "dana")
 Imdb.most_popular
 Movie.first.reviews.create(user: User.first, rating: 3, sex: "A few kisses", violence: "Death and blowing things up", language: "S*it!", comment: "Great for 12 and up!")
 Trailer.get_trailers
+# reset database on 01/01/23 due to imdb api using different link for images.
